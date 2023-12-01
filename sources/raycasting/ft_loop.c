@@ -59,7 +59,6 @@ int	ft_loop(t_game *game)
 		ft_calculate_positions(game);
 		ft_draw_line(game, &game->mlx->img, x);
 	}
-	// ft_print_minimap(game, &game->mlx->img);
 	mlx_put_image_to_window(game->mlx->mlx, game->mlx->win, \
 		game->mlx->img.img, 0, 0);
 	return (0);
