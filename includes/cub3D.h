@@ -109,7 +109,6 @@ int				ft_init_textures(t_game *game);
 void			ft_calculate_positions(t_game *game);
 void			ft_draw_line(t_game *game, t_img *img, int x);
 int				ft_loop(t_game *game);
-void			ft_print_minimap(t_game *game, t_img *img);
 void			ft_cast_ray(t_game *game);
 void			ft_move(t_game *game);
 void			ft_rot_left(t_game *game);
@@ -118,7 +117,6 @@ int				ft_create_img(t_game *game, char *path, int side);
 int				ft_init_window(t_game *game);
 void			ft_mlx_pixel_put(t_img *data, int x, int y, int color);
 void			ft_print_line(t_game *game, t_point p0, t_point p2, int color);
-void			ft_put_square(t_game *game, t_point p, int color, double angle);
 int				ft_hook_keypress(int key, t_game *game);
 int				ft_hook_keyrelease(int key, t_game *game);
 

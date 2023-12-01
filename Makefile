@@ -21,14 +21,12 @@ S_SRC		= main.c									\
 			${D_RAY}ft_calculate_positions.c			\
 			${D_RAY}ft_draw_line.c						\
 			${D_RAY}ft_loop.c							\
-			${D_RAY}ft_print_minimap.c					\
 			${D_RAY}ft_cast_ray.c						\
 			${D_RAY}ft_move.c							\
 			${D_RAY}ft_rot.c							\
 			${D_RAY}ft_raycasting.c						\
 			${D_RAY}ft_mlx_pixel_put.c					\
 			${D_RAY}ft_print_line.c						\
-			${D_RAY}ft_put_square.c						\
 			${D_RAY}ft_hook_keypress.c					\
 			${D_UTILS}ft_error.c						\
 			${D_UTILS}ft_reset_struct.c					\
