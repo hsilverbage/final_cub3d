@@ -9,6 +9,19 @@ bool	ft_valid_tex_char(char c)
 	}
 	return (false);
 }
+bool	ft_valid_map_char(char c)
+{
+	if (c == '1' || c == '0' || c == '\0' || c == '\n' || c == 'N' || c == 'S' || c == 'W' || c == 'E')
+		return (true);
+	return (false);
+}
+
+bool	ft_valid_start_char(char c)
+{
+	if (c == 'N' || c == 'S' || c == 'W' || c == 'E')
+		return (true);
+	return (false);
+}
 
 bool	ft_double(char *str, t_game *game)
 {

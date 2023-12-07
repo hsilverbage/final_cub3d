@@ -23,7 +23,7 @@ void	ft_free_mlx(t_game *game)
 {
 	mlx_clear_window(game->mlx->mlx, game->mlx->win);
 	mlx_destroy_window(game->mlx->mlx, game->mlx->win);
-	// mlx_destroy_display(game->mlx->mlx);
+	mlx_destroy_display(game->mlx->mlx);
 }
 
 int	ft_exit(t_game *game)

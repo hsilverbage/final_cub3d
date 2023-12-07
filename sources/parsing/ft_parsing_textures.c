@@ -29,27 +29,29 @@ static char	*ft_extract_path(char *str, char c1, char c2, t_game *game)
 
 int	ft_get_textures(char **file, t_game *game)
 {
-	int	i;
+	int	x;
 	int	y;
 
-	i = 0;
 	y = 0;
-	while (file[i])
+	x = 0;
+	while (file[y])
 	{
-		while (file[i][y] == ' ')
-			y++;
-		if (ft_valid_tex_char(file[i][y]) == false)
-			break ;
-		if (!ft_strncmp(file[i] + y, "NO", 2) && ft_double(game->north, game))
-			game->north = ft_extract_path(file[i], 'N', 'O', game);
-		if (!ft_strncmp(file[i] + y, "SO", 2) && ft_double(game->south, game))
-			game->south = ft_extract_path(file[i], 'S', 'O', game);
-		if (!ft_strncmp(file[i] + y, "WE", 2) && ft_double(game->west, game))
-			game->west = ft_extract_path(file[i], 'W', 'E', game);
-		if (!ft_strncmp(file[i] + y, "EA", 2) && ft_double(game->east, game))
-			game->east = ft_extract_path(file[i], 'E', 'A', game);
-		i++;
-		y = 0;
+		while (file[y][x] == ' ')
+			x++;
+		if (game->file[y][x] == '1' || game->file[y][x] == '0')
+			break;
+		if (ft_valid_tex_char(game->file[y][x]) == false)
+			ft_error_msg("Invalid char found .cub file", game);
+		if (!ft_strncmp(file[y] + x, "NO", 2) && ft_double(game->north, game))
+			game->north = ft_extract_path(file[y], 'N', 'O', game);
+		if (!ft_strncmp(file[y] + x, "SO", 2) && ft_double(game->south, game))
+			game->south = ft_extract_path(file[y], 'S', 'O', game);
+		if (!ft_strncmp(file[y] + x, "WE", 2) && ft_double(game->west, game))
+			game->west = ft_extract_path(file[y], 'W', 'E', game);
+		if (!ft_strncmp(file[y] + x, "EA", 2) && ft_double(game->east, game))
+			game->east = ft_extract_path(file[y], 'E', 'A', game);
+		y++;
+		x = 0;
 	}
-	return (i);
+	return (y);
 }

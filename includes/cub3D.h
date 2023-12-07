@@ -100,6 +100,8 @@ int				ft_get_textures(char **file, t_game *game);
 int				ft_get_colors(t_game *game);
 void			ft_check_textures(t_game *game);
 bool			ft_valid_tex_char(char c);
+bool			ft_valid_map_char(char c);
+bool			ft_valid_start_char(char c)
 bool			ft_double(char *str, t_game *game);
 void			ft_parse_map(t_game *game);
 

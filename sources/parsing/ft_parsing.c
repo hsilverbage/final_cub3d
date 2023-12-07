@@ -75,13 +75,13 @@ void	ft_parsing(t_game *game, char *file)
 	else
 		game->map = game->file + start_map2;
 	ft_parse_map(game);
-	// int i = 0;
-	// while (game->map[i])
-	// 	printf("%s\n", game->map[i++]);
 	// printf("%s\n", game->north);
 	// printf("%s\n", game->south);
 	// printf("%s\n", game->east);
 	// printf("%s\n", game->west);
 	// printf("%s\n", game->floor);
 	// printf("%s\n", game->ceiling);
+	// int i = 0;
+	// while (game->map[i])
+	// 	printf("%s\n", game->map[i++]);
 }
