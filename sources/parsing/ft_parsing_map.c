@@ -1,58 +1,67 @@
 #include "cub3D.h"
 
-static void	ft_check_valid_map_char(t_game *game)
+int	is_closed(t_game *game)
 {
-	int	x;
-	int	y;
+	char	**dup;
+	int		y;
+	int		x;
 
-	x = 0;
-	y = 0;
-	while (game->map[y])
+	y = -1;
+	dup = dup_map(game);
+	while (dup[++y])
 	{
-		while (game->map[y][x])
+		x = -1;
+		while (dup[y][++x])
 		{
-			if (ft_valid_map_char(game->map[y][x]) == false)
-				ft_error_msg("Invalid char found in map", game);
-			x++;
+			if (dup[y][x] == 'x')
+			{
+				if ((dup[y][x + 1] && !in_set(dup[y][x + 1], "x1"))
+					|| (dup[y + 1] && !in_set(dup[y + 1][x], "x1")))
+					return (0);
+				if ((x != 0 && !in_set(dup[y][x - 1], "x1"))
+					|| (y != 0 && !in_set(dup[y - 1][x], "x1")))
+					return (0);
+			}
 		}
-		y++;
-		x = 0;
 	}
+	tab_free(dup);
+	return (1);
 }
 
-static void ft_init_start_pos(t_game *game)
+int	check_token(t_game *game)
 {
+	int	count;
 	int	x;
 	int	y;
-	int	set;
 
-	x = 0;
-	y = 0;
-	set = 0;
-	while (game->map[y])
+	count = -1;
+	y = -1;
+	while (++y < game->map_height)
 	{
-		while (game->map[y][x])
+		x = -1;
+		while (game->map[y][++x])
 		{
-			if (ft_valid_start_char(game->map[y][x]) == true)
+			if (in_set(game->map[y][x], "NWES"))
 			{
-				game->
+				game->p = game->map[y][x];
+				count++;
 			}
-			x++;
+			else if (!in_set(game->map[y][x], " NWES01\t"))
+				ft_error_msg("Invalid token\n", game);
 		}
-		y++;
-		x = 0;
 	}
+	return (count);
+}
+
+void	check_map(t_game *game)
+{
+	if (!is_closed(game))
+		ft_error_msg("Invalid map\n", game);
+	if (check_token(game))
+		ft_error_msg("Invalid map\n", game);
 }
 
 void	ft_parse_map(t_game *game)
 {
-	int		i;
-
-	i = 0;
-	while (game->map[i])
-	{
-		printf("%s\n", game->map[i]);
-		i++;
-	}
-	ft_check_valid_map_char(game);
+	check_map(game);
 }

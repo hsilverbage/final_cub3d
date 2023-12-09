@@ -1,5 +1,15 @@
 #include "cub3D.h"
 
+void	tab_free(char **tab)
+{
+	int	i;
+
+	i = -1;
+	while (tab[++i])
+		free(tab[i]);
+	free(tab);
+}
+
 void	ft_free_all(t_game *game)
 {
 	int	i;

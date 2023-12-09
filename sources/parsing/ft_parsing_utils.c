@@ -9,18 +9,19 @@ bool	ft_valid_tex_char(char c)
 	}
 	return (false);
 }
-bool	ft_valid_map_char(char c)
-{
-	if (c == '1' || c == '0' || c == '\0' || c == '\n' || c == 'N' || c == 'S' || c == 'W' || c == 'E')
-		return (true);
-	return (false);
-}
 
-bool	ft_valid_start_char(char c)
+char	**dup_map(t_game *game)
 {
-	if (c == 'N' || c == 'S' || c == 'W' || c == 'E')
-		return (true);
-	return (false);
+	char	**dup;
+	int		i;
+
+	dup = ft_calloc(sizeof(char *), game->map_height + 5);
+	dup[0] = dup_line(NULL, game->map_width + 4);
+	i = 0;
+	while (i++ <= game->map_height)
+		dup[i] = dup_line(game->map[i - 1], game->map_width + 4);
+	dup[game->map_height + 2] = dup_line(NULL, game->map_width + 4);
+	return (dup);
 }
 
 bool	ft_double(char *str, t_game *game)

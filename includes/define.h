@@ -1,8 +1,8 @@
 #ifndef DEFINE_H
 # define DEFINE_H
 
-# define WIDTH 1920
-# define HEIGHT 1080
+# define WIDTH 780
+# define HEIGHT 480
 # define CUB_SIZE 16
 # define P_OFFSET 180
 # define IMG_SIZE 256

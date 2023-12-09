@@ -37,11 +37,10 @@ static int	ft_count_lines(char *file, t_game *game)
 
 static void	ft_get_file(char *file, int nb_lines, t_game *game)
 {
-	int		i;
 	int		fd;
 	char	*line;
 
-	i = 0;
+	game->map_height = 0;
 	fd = open(file, O_RDONLY);
 	if (fd < 0)
 		ft_perror_exit();
@@ -51,11 +50,34 @@ static void	ft_get_file(char *file, int nb_lines, t_game *game)
 	line = get_next_line(fd);
 	while (line)
 	{
-		game->file[i++] = line;
+		game->file[game->map_height++] = line;
 		line = get_next_line(fd);
 	}
-	game->file[i] = NULL;
+	game->file[game->map_height] = NULL;
 	close(fd);
+}
+
+void	copy_map(t_game *game, int i)
+{
+	int j;
+
+	j = -1;
+	game->map_width = 0;
+	game->map = malloc(sizeof(char *) * game->map_height + 1);
+	if (!game->map)
+		return ;
+	while (game->file[i])
+	{
+		if (ft_strlen(game->file[i]) > (size_t)game->map_width)
+			game->map_width = ft_strlen(game->file[i]) - 1;
+		if (is_empty(game->file[i]))
+			ft_error_msg("Invalid map\n", game);
+		game->map[++j] = ft_substr(game->file[i], 0,
+				ft_strchr_index(game->file[i], "\n"));
+		i++;
+	}
+	if (ft_strchr_index(game->file[i - 1], "\n") != -1)
+		ft_error_msg("Invalid map\n", game);
 }
 
 void	ft_parsing(t_game *game, char *file)
@@ -71,10 +93,16 @@ void	ft_parsing(t_game *game, char *file)
 	start_map2 = ft_get_colors(game);
 	ft_check_textures(game);
 	if (start_map1 > start_map2)
-		game->map = game->file + start_map1;
+	{
+		game->map_height -= start_map1 + 1;
+		copy_map(game, start_map1);
+	}
 	else
-		game->map = game->file + start_map2;
-	ft_parse_map(game);
+	{
+		game->map_height -= start_map2 + 1;
+		copy_map(game, start_map2);
+	}
+	check_map(game);
 	// printf("%s\n", game->north);
 	// printf("%s\n", game->south);
 	// printf("%s\n", game->east);

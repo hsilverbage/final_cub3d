@@ -16,6 +16,7 @@ S_SRC		= main.c									\
 			${D_PARSE}ft_parsing_textures.c				\
 			${D_PARSE}ft_parsing_utils.c				\
 			${D_PARSE}ft_parsing_map.c					\
+			${D_PARSE}ft_parsing_utils_2.c				\
 			${D_RAY}ft_init_ray.c						\
 			${D_RAY}ft_init_textures.c					\
 			${D_RAY}ft_calculate_positions.c			\

@@ -10,6 +10,7 @@
 # include "keycode.h"
 # include "define.h"
 
+
 enum {
 	NORTH,
 	SOUTH,
@@ -93,6 +94,9 @@ typedef struct s_game
 	int		move_left;
 	int		last_x;
 	int		end;
+	int		map_height;
+	int		map_width;
+	char	p;
 }	t_game;
 
 void			ft_parsing(t_game *game, char *cub_file);
@@ -101,9 +105,14 @@ int				ft_get_colors(t_game *game);
 void			ft_check_textures(t_game *game);
 bool			ft_valid_tex_char(char c);
 bool			ft_valid_map_char(char c);
-bool			ft_valid_start_char(char c)
+bool			ft_valid_start_char(char c);
 bool			ft_double(char *str, t_game *game);
-void			ft_parse_map(t_game *game);
+void			check_map(t_game *game);
+int				is_empty(char *s);
+int				ft_strchr_index(const char *s, char *c);
+char			*dup_line(char *src, int len);
+int				in_set(char c, char *set);
+char			**dup_map(t_game *game);
 
 int				ft_raycasting(t_game *game);
 void			ft_init_ray(t_game *game);
@@ -132,5 +141,6 @@ void			ft_free_mlx(t_game *game);
 void			ft_free_str(char **str);
 void			ft_free_struct(t_game *game);
 void			ft_free_all(t_game *game);
+void			tab_free(char **tab);
 
 #endif
