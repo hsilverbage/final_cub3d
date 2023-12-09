@@ -29,12 +29,16 @@ void	ft_reset_ray(t_ray *ray)
 
 void	ft_init_struct(t_game *game)
 {
+	int i;
+
 	game->north = NULL;
 	game->south = NULL;
 	game->west = NULL;
 	game->east = NULL;
 	game->floor = NULL;
 	game->ceiling = NULL;
+	game->map = NULL;
+	game->ray = NULL;
 	game->expanded = 0;
 	game->rot_left = 0;
 	game->rot_right = 0;
@@ -43,4 +47,18 @@ void	ft_init_struct(t_game *game)
 	game->move_left = 0;
 	game->move_right = 0;
 	game->last_x = -1;
+	game->mlx = malloc(sizeof(t_mlx));
+    if (game->mlx != NULL)
+    {
+        game->mlx->mlx = NULL;
+        game->mlx->win = NULL;
+    }
+	else
+		return ;
+    i = 0;
+    while (i < 4) // Remplacez NOMBRE_TEXTURES par le nombre réel de textures
+    {
+        game->texture[i].img = NULL;
+        i++;
+    }
 }

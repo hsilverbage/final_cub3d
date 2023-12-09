@@ -126,6 +126,8 @@ int	ft_get_colors(t_game *game)
 		i++;
 		y = 0;
 	}
+	if(game->floor == NULL || game->ceiling == NULL)
+		ft_error_msg(COLORS_ERR, game);
 	game->floor_color = ft_convert_to_hexa(game->floor, game);
 	game->ceiling_color = ft_convert_to_hexa(game->ceiling, game);
 	return (i);

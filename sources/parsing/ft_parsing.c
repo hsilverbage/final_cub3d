@@ -63,7 +63,7 @@ void	copy_map(t_game *game, int i)
 
 	j = -1;
 	game->map_width = 0;
-	game->map = malloc(sizeof(char *) * game->map_height + 1);
+	game->map = malloc(sizeof(char *) * (game->map_height + 1));
 	if (!game->map)
 		return ;
 	while (game->file[i])
@@ -73,7 +73,7 @@ void	copy_map(t_game *game, int i)
 		if (is_empty(game->file[i]))
 			ft_error_msg("Invalid map\n", game);
 		game->map[++j] = ft_substr(game->file[i], 0,
-				ft_strchr_index(game->file[i], "\n"));
+				ft_strchr_index(game->file[i], "\n")); 
 		i++;
 	}
 	if (ft_strchr_index(game->file[i - 1], "\n") != -1)
@@ -103,13 +103,4 @@ void	ft_parsing(t_game *game, char *file)
 		copy_map(game, start_map2);
 	}
 	check_map(game);
-	// printf("%s\n", game->north);
-	// printf("%s\n", game->south);
-	// printf("%s\n", game->east);
-	// printf("%s\n", game->west);
-	// printf("%s\n", game->floor);
-	// printf("%s\n", game->ceiling);
-	// int i = 0;
-	// while (game->map[i])
-	// 	printf("%s\n", game->map[i++]);
 }

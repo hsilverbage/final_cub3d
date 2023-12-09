@@ -21,6 +21,13 @@ void	ft_free_all(t_game *game)
 			free(game->file[i++]);
 		free(game->file);
 	}
+	i = 0;
+	if (game->map)
+	{
+		while (i <= game->map_height)
+			free(game->map[i++]);
+		free(game->map);
+	}
 	if (game->mlx->mlx)
 		free(game->mlx->mlx);
 	if (game->mlx)

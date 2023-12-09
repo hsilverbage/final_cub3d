@@ -11,8 +11,8 @@ int	ft_create_img(t_game *game, char *path, int side)
 	{
 		printf("Can't open texture : "\
 			"%d\n0 : NO\n1 : SO\n2 : WE\n3 : EA\n", side);
-		mlx_destroy_image(game->mlx->mlx, game->mlx->img.img);
-		return (printf("ERROR\n"));
+		ft_exit(game);
+		return (1);
 	}
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, \
 		&img.line_length, &img.endian);
