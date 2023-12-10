@@ -17,7 +17,7 @@ static bool	ft_check_colors(char *str)
 	}
 	while (str[i] == ' ' || str[i] == '\t')
 		i++;
-	if ((str[i] == '\0' || str[i] == '\n') && count == 2 )
+	if ((str[i] == '\0' || str[i] == '\n') && count == 2)
 		return (true);
 	else
 		return (false);
@@ -116,7 +116,7 @@ int	ft_get_colors(t_game *game)
 		while (game->file[i][y] == ' ')
 			y++;
 		if (game->file[i][y] == '1' || game->file[i][y] == '0')
-			break;
+			break ;
 		if (ft_valid_tex_char(game->file[i][y]) == false)
 			ft_error_msg("Invalid char found .cub file", game);
 		else if (game->file[i][y] == 'F' && ft_double(game->floor, game))
@@ -126,7 +126,7 @@ int	ft_get_colors(t_game *game)
 		i++;
 		y = 0;
 	}
-	if(game->floor == NULL || game->ceiling == NULL)
+	if (game->floor == NULL || game->ceiling == NULL)
 		ft_error_msg(COLORS_ERR, game);
 	game->floor_color = ft_convert_to_hexa(game->floor, game);
 	game->ceiling_color = ft_convert_to_hexa(game->ceiling, game);

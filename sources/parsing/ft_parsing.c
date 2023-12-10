@@ -6,9 +6,9 @@ static void	ft_check_extension(char *str, t_game *game)
 
 	i = ft_strlen(str);
 	if (!(str[i - 1] == 'b' && str[i - 2] == 'u'
-			&& str[i - 3] == 'c' && str[i - 4] == '.'))
+			&& str[i - 3] == 'c' && str[i - 4] == '.' ))
 	{
-		ft_error_msg("Invalid map extension !", game);
+		ft_error_msg("Invalid map extension !\n", game);
 	}
 }
 
@@ -21,7 +21,7 @@ static int	ft_count_lines(char *file, t_game *game)
 	nb_lines = 0;
 	fd = open(file, O_RDONLY);
 	if (fd < 0)
-		ft_perror_exit();
+		ft_error_msg("Invalid .cub file\n", game);
 	line = get_next_line(fd);
 	while (line)
 	{
@@ -59,8 +59,10 @@ static void	ft_get_file(char *file, int nb_lines, t_game *game)
 
 void	copy_map(t_game *game, int i)
 {
-	int j;
+	int	j;
+	int	start_map;
 
+	start_map = i;
 	j = -1;
 	game->map_width = 0;
 	game->map = malloc(sizeof(char *) * (game->map_height + 1));
@@ -71,9 +73,12 @@ void	copy_map(t_game *game, int i)
 		if (ft_strlen(game->file[i]) > (size_t)game->map_width)
 			game->map_width = ft_strlen(game->file[i]) - 1;
 		if (is_empty(game->file[i]))
+		{
+			game->map_height = i - start_map - 1;
 			ft_error_msg("Invalid map\n", game);
+		}
 		game->map[++j] = ft_substr(game->file[i], 0,
-				ft_strchr_index(game->file[i], "\n")); 
+				ft_strchr_index(game->file[i], "\n"));
 		i++;
 	}
 	if (ft_strchr_index(game->file[i - 1], "\n") != -1)

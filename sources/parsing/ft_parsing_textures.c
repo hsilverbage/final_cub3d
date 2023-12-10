@@ -39,7 +39,7 @@ int	ft_get_textures(char **file, t_game *game)
 		while (file[y][x] == ' ')
 			x++;
 		if (game->file[y][x] == '1' || game->file[y][x] == '0')
-			break;
+			break ;
 		if (ft_valid_tex_char(game->file[y][x]) == false)
 			ft_error_msg("Invalid char found .cub file", game);
 		if (!ft_strncmp(file[y] + x, "NO", 2) && ft_double(game->north, game))

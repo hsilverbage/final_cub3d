@@ -10,8 +10,8 @@
 # include "keycode.h"
 # include "define.h"
 
-
-enum {
+enum
+{
 	NORTH,
 	SOUTH,
 	EAST,

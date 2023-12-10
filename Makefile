@@ -31,7 +31,7 @@ S_SRC		= main.c									\
 			${D_RAY}ft_hook_keypress.c					\
 			${D_UTILS}ft_error.c						\
 			${D_UTILS}ft_reset_struct.c					\
-			${D_UTILS}ft_free_all.c
+			${D_UTILS}ft_free_all.c						\
 
 HDRS_LIST	= cub3D.h
 
@@ -74,7 +74,7 @@ all:		lib		\
 			mlx		\
 			${NAME}
 
-${D_OBJS}%.o: %.c		${D_LMLX}mlx.h ${HDRS} Makefile
+${D_OBJS}%.o: %.c		${D_LMLX}mlx.h ${HDRS} ${D_INCLUDES}define.h ${D_INCLUDES}keycode.h Makefile
 			@mkdir		-p $(shell dirname $@)
 			@${PRINT}	"${C_Y}${C_DEL}Creating ${NAME}'s objects : $@"
 			@${CC}		${CFLAGS} -I${D_LMLX} -I${D_LIB} -I${D_INCLUDES} -O3 -c $< -o $@

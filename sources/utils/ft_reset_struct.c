@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_reset_struct.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahmedkhelladipro <ahmedkhelladipro@stud    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/10 15:48:12 by ahmedkhella       #+#    #+#             */
+/*   Updated: 2023/12/10 16:10:18 by ahmedkhella      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3D.h"
 
 void	ft_reset_ray(t_ray *ray)
@@ -27,10 +39,30 @@ void	ft_reset_ray(t_ray *ray)
 	ray->boolean = 0;
 }
 
+void	ft_init_mlx(t_game *game)
+{
+	int	i;
+
+	i = 0;
+	game->mlx = malloc(sizeof(t_mlx));
+	if (game->mlx != NULL)
+	{
+		game->mlx->mlx = NULL;
+		game->mlx->win = NULL;
+	}
+	else
+		return ;
+	i = 0;
+	while (i < 4)
+	{
+		game->texture[i].img = NULL;
+		i++;
+	}
+	game->file = NULL;
+}
+
 void	ft_init_struct(t_game *game)
 {
-	int i;
-
 	game->north = NULL;
 	game->south = NULL;
 	game->west = NULL;
@@ -47,18 +79,5 @@ void	ft_init_struct(t_game *game)
 	game->move_left = 0;
 	game->move_right = 0;
 	game->last_x = -1;
-	game->mlx = malloc(sizeof(t_mlx));
-    if (game->mlx != NULL)
-    {
-        game->mlx->mlx = NULL;
-        game->mlx->win = NULL;
-    }
-	else
-		return ;
-    i = 0;
-    while (i < 4) // Remplacez NOMBRE_TEXTURES par le nombre réel de textures
-    {
-        game->texture[i].img = NULL;
-        i++;
-    }
+	ft_init_mlx(game);
 }

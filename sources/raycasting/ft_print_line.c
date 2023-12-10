@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahmedkhelladipro <ahmedkhelladipro@stud    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/10 15:50:51 by ahmedkhella       #+#    #+#             */
+/*   Updated: 2023/12/10 15:50:53 by ahmedkhella      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3D.h"
 
 static void	ft_put_all_pixel(t_img *img, int x, int y, int color)
