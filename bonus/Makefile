@@ -40,7 +40,7 @@ O_SRC		= $(patsubst %.c, ${D_OBJS}%.o, $(S_TMP))
 HDRS		= ${addprefix ${D_INCLUDES}, ${HDRS_LIST}}
 
 # VARIABLES
-NAME		= cub3D
+NAME		= ../cub3D
 CC			= cc
 
 # FLAGS
@@ -82,7 +82,7 @@ ${D_OBJS}%.o: %.c		${D_LMLX}mlx.h ${HDRS} ${D_INCLUDES}define.h ${D_INCLUDES}key
 ${NAME}:	${O_SRC}
 			@${PRINT}	"${C_G}${C_DEL}Creating ${NAME}'s objects : DONE\n"
 			@${PRINT}	"${C_Y}Compiling ${NAME}...${C_RST}"
-			@${CC}		${O_SRC} -o ${NAME} ${LIBFT} ${MLX}
+			@${CC} 		${O_SRC} -o ${NAME} ${LIBFT} ${MLX}
 			@${PRINT}	"${C_G}${C_DEL}Compiling ${NAME} : DONE ${C_RST}\n"
 
 lib:
