@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rot.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahmedkhelladipro <ahmedkhelladipro@stud    +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/10 15:50:41 by ahmedkhella       #+#    #+#             */
-/*   Updated: 2023/12/10 15:50:44 by ahmedkhella      ###   ########.fr       */
+/*   Created: 2023/12/14 20:52:48 by akhellad          #+#    #+#             */
+/*   Updated: 2023/12/14 23:05:55 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "cub3Dbonus.h"
 
 void	ft_rot_left(t_game *game)
 {

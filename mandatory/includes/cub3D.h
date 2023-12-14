@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:06:24 by hsilverb          #+#    #+#             */
-/*   Updated: 2023/12/11 17:06:25 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2023/12/14 21:16:26 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,8 @@ typedef struct s_game
 	int		map_height;
 	int		map_width;
 	char	p;
+	int		image_width;
+	int		image_height;
 }	t_game;
 
 void			ft_parsing(t_game *game, char *cub_file);

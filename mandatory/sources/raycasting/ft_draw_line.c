@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_draw_line.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/14 21:35:14 by akhellad          #+#    #+#             */
+/*   Updated: 2023/12/14 21:35:16 by akhellad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3D.h"
 
 static unsigned int	ft_get_color(t_img *data, int x, int y)
@@ -9,8 +21,7 @@ static unsigned int	ft_get_color(t_img *data, int x, int y)
 		x *= -1;
 	if (y < 0)
 		y *= -1;
-	dst = data->addr + (y % IMG_SIZE * data->line_length + x % IMG_SIZE * \
-		(data->bits_per_pixel / 8));
+	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 	color = *(unsigned int *)dst;
 	return (color);
 }
@@ -29,7 +40,7 @@ void	ft_draw_line(t_game *game, t_img *img, int x)
 			ft_mlx_pixel_put(img, x, y, game->floor_color);
 		else
 		{
-			game->ray->tex.y = (int)game->ray->tex_pos & 255;
+			game->ray->tex.y = (int)game->ray->tex_pos & (game->image_width -1);
 			game->ray->tex_pos += game->ray->step;
 			color = ft_get_color(&game->texture[game->ray->side], \
 				game->ray->tex.x, game->ray->tex.y);

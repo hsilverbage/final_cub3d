@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_reset_struct.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahmedkhelladipro <ahmedkhelladipro@stud    +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 15:48:12 by ahmedkhella       #+#    #+#             */
-/*   Updated: 2023/12/10 16:10:18 by ahmedkhella      ###   ########.fr       */
+/*   Updated: 2023/12/14 21:07:11 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

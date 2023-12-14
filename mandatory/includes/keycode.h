@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   keycode.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahmedkhelladipro <ahmedkhelladipro@stud    +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 17:32:41 by henrik            #+#    #+#             */
-/*   Updated: 2023/12/10 15:55:05 by ahmedkhella      ###   ########.fr       */
+/*   Updated: 2023/12/14 21:36:04 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

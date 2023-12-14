@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/12/14 23:12:00 by akhellad          #+#    #+#              #
+#    Updated: 2023/12/14 23:12:03 by akhellad         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 OS			= $(shell uname -s)
 
 D_MLX		= minilibx/
@@ -27,7 +39,6 @@ S_SRC		= main.c									\
 			${D_RAY}ft_rot.c							\
 			${D_RAY}ft_raycasting.c						\
 			${D_RAY}ft_mlx_pixel_put.c					\
-			${D_RAY}ft_print_line.c						\
 			${D_RAY}ft_hook_keypress.c					\
 			${D_UTILS}ft_error.c						\
 			${D_UTILS}ft_reset_struct.c					\
@@ -74,7 +85,7 @@ all:		lib		\
 			mlx		\
 			${NAME}
 
-${D_OBJS}%.o: %.c		${D_LMLX}mlx.h ${HDRS} ${D_INCLUDES}define.h ${D_INCLUDES}keycode.h Makefile
+${D_OBJS}%.o: %.c		${D_LIB}libft.a ${D_LMLX}mlx.h ${HDRS} ${D_INCLUDES}define.h ${D_INCLUDES}keycode.h Makefile
 			@mkdir		-p $(shell dirname $@)
 			@${PRINT}	"${C_Y}${C_DEL}Creating ${NAME}'s objects : $@"
 			@${CC}		${CFLAGS} -I${D_LMLX} -I${D_LIB} -I${D_INCLUDES} -O3 -c $< -o $@

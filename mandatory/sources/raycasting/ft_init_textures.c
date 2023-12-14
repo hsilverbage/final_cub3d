@@ -1,4 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_init_textures.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/14 21:10:57 by akhellad          #+#    #+#             */
+/*   Updated: 2023/12/14 23:45:27 by akhellad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3D.h"
+
+int	set_image_size(t_game *game, int height, int width, int side)
+{
+	if (side == 0)
+	{
+		game->image_height = height;
+		game->image_width = width;
+	}
+	else
+	{
+		if (game->image_height != height || game->image_width != width)
+		{
+			printf("Error: Texture %d size does not match the size of" \
+					"the first texture.\n", side);
+			return (1);
+		}
+	}
+	return (0);
+}
 
 int	ft_create_img(t_game *game, char *path, int side)
 {
@@ -11,6 +42,12 @@ int	ft_create_img(t_game *game, char *path, int side)
 	{
 		printf("Can't open texture : "\
 			"%d\n0 : NO\n1 : SO\n2 : WE\n3 : EA\n", side);
+		ft_exit(game);
+		return (1);
+	}
+	if (set_image_size(game, height, width, side))
+	{
+		mlx_destroy_image(game->mlx->mlx, img.img);
 		ft_exit(game);
 		return (1);
 	}

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parsing.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:15:09 by hsilverb          #+#    #+#             */
-/*   Updated: 2023/12/11 17:15:10 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2023/12/14 23:05:55 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "cub3Dbonus.h"
 
 static void	ft_check_extension(char *str, t_game *game)
 {

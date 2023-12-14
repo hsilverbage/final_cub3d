@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rot.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahmedkhelladipro <ahmedkhelladipro@stud    +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 15:50:41 by ahmedkhella       #+#    #+#             */
-/*   Updated: 2023/12/10 15:50:44 by ahmedkhella      ###   ########.fr       */
+/*   Updated: 2023/12/14 21:10:29 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

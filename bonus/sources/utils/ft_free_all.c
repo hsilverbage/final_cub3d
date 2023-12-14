@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_all.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahmedkhelladipro <ahmedkhelladipro@stud    +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 15:49:22 by ahmedkhella       #+#    #+#             */
-/*   Updated: 2023/12/10 16:37:47 by ahmedkhella      ###   ########.fr       */
+/*   Updated: 2023/12/14 23:05:55 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "cub3Dbonus.h"
 
 void	tab_free(char **tab)
 {
@@ -67,6 +67,7 @@ int	ft_exit(t_game *game)
 		i++;
 	}
 	mlx_destroy_image(game->mlx->mlx, game->mlx->img.img);
+	mlx_destroy_image(game->mlx->mlx, game->minimap.img);
 	ft_free_mlx(game);
 	ft_free_all(game);
 	exit(EXIT_SUCCESS);

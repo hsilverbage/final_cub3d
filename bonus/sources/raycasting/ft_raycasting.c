@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_raycasting.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 15:50:46 by ahmedkhella       #+#    #+#             */
-/*   Updated: 2023/12/11 16:02:59 by akhellad         ###   ########.fr       */
+/*   Updated: 2023/12/14 23:05:55 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "cub3Dbonus.h"
 
 static void	ft_mlx_hook_loop(t_game *game)
 {
@@ -23,7 +23,8 @@ static void	ft_mlx_hook_loop(t_game *game)
 
 void	init_minimap(t_game *game)
 {
-	game->minimap.img = mlx_new_image(game->mlx->mlx, MINIMAP_WIDTH, MINIMAP_HEIGHT);
+	game->minimap.img = mlx_new_image(game->mlx->mlx, \
+		MINIMAP_WIDTH, MINIMAP_HEIGHT);
 	game->minimap.addr = mlx_get_data_addr(game->minimap.img, \
 		&game->minimap.bits_per_pixel, &game->minimap.line_length, \
 		&game->minimap.endian);

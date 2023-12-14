@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parsing_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:15:07 by hsilverb          #+#    #+#             */
-/*   Updated: 2023/12/11 17:15:08 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2023/12/14 23:05:55 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "cub3Dbonus.h"
 
 bool	ft_valid_tex_char(char c)
 {

@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/12/14 23:12:00 by akhellad          #+#    #+#              #
+#    Updated: 2023/12/14 23:24:41 by akhellad         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 OS			= $(shell uname -s)
 
 D_MLX		= minilibx/
@@ -27,20 +39,21 @@ S_SRC		= main.c									\
 			${D_RAY}ft_rot.c							\
 			${D_RAY}ft_raycasting.c						\
 			${D_RAY}ft_mlx_pixel_put.c					\
-			${D_RAY}ft_print_line.c						\
 			${D_RAY}ft_hook_keypress.c					\
 			${D_UTILS}ft_error.c						\
 			${D_UTILS}ft_reset_struct.c					\
 			${D_UTILS}ft_free_all.c						\
+			${D_BONUS}minimap.c							\
+			${D_BONUS}fog.c								\
 
-HDRS_LIST	= cub3D.h
+HDRS_LIST	= cub3Dbonus.h
 
 S_TMP		= ${addprefix ${D_SRC}, ${S_SRC}}
 O_SRC		= $(patsubst %.c, ${D_OBJS}%.o, $(S_TMP))
 HDRS		= ${addprefix ${D_INCLUDES}, ${HDRS_LIST}}
 
 # VARIABLES
-NAME		= ../cub3D
+NAME		= ../cub3Dbonus
 CC			= cc
 
 # FLAGS
@@ -60,6 +73,7 @@ D_SRC		= sources/
 D_PARSE		= parsing/
 D_RAY		= raycasting/
 D_UTILS		= utils/
+D_BONUS		= bonus/
 
 # COLORS
 C_R			= \033[1;31m
@@ -74,7 +88,7 @@ all:		lib		\
 			mlx		\
 			${NAME}
 
-${D_OBJS}%.o: %.c		${D_LMLX}mlx.h ${HDRS} ${D_INCLUDES}define.h ${D_INCLUDES}keycode.h Makefile
+${D_OBJS}%.o: %.c		${D_LIB}libft.a ${D_LMLX}mlx.h ${HDRS} ${D_INCLUDES}define.h ${D_INCLUDES}keycode.h Makefile
 			@mkdir		-p $(shell dirname $@)
 			@${PRINT}	"${C_Y}${C_DEL}Creating ${NAME}'s objects : $@"
 			@${CC}		${CFLAGS} -I${D_LMLX} -I${D_LIB} -I${D_INCLUDES} -O3 -c $< -o $@
@@ -87,6 +101,7 @@ ${NAME}:	${O_SRC}
 
 lib:
 			@${MAKE}	-C ./libft
+			@${PRINT}	"${C_G}${C_DEL}\nCompiling LIBFT : DONE\n${C_RST}"
 
 mlx:
 			@${MAKE}	-C ./${D_LMLX}

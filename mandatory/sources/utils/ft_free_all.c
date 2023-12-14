@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_all.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahmedkhelladipro <ahmedkhelladipro@stud    +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 15:49:22 by ahmedkhella       #+#    #+#             */
-/*   Updated: 2023/12/10 16:37:47 by ahmedkhella      ###   ########.fr       */
+/*   Updated: 2023/12/14 21:07:39 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

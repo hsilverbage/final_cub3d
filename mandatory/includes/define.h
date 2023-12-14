@@ -3,21 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:06:29 by hsilverb          #+#    #+#             */
-/*   Updated: 2023/12/11 17:06:30 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2023/12/14 21:21:34 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DEFINE_H
 # define DEFINE_H
 
-# define WIDTH 1080
-# define HEIGHT 780
-# define CUB_SIZE 16
-# define P_OFFSET 180
-# define IMG_SIZE 256
+# define WIDTH 720
+# define HEIGHT 480
 # define MOVE_SPEED 0.05
 # define ROT_SPEED 0.03
 

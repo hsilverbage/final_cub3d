@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parsing_textures.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsilverb <hsilverb@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:15:02 by hsilverb          #+#    #+#             */
-/*   Updated: 2023/12/11 17:15:03 by hsilverb         ###   ########lyon.fr   */
+/*   Updated: 2023/12/14 23:05:55 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "cub3Dbonus.h"
 
 static char	*ft_extract_path(char *str, char c1, char c2, t_game *game)
 {

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calculate_positions.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/14 21:35:24 by akhellad          #+#    #+#             */
+/*   Updated: 2023/12/14 21:35:30 by akhellad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3D.h"
 
 static int	ft_calculate_height(t_game *game)
@@ -31,12 +43,13 @@ static void	ft_calculate_textures(t_game *game, int line_height)
 	else
 		wall_x = game->ray->pos.x + game->ray->perp_wall_dist * \
 			game->ray->raydir.x;
-	game->ray->tex.x = (int)(wall_x * IMG_SIZE);
+	wall_x -= floor(wall_x);
+	game->ray->tex.x = (int)(wall_x * game->image_height);
 	if (game->ray->side <= 1 && game->ray->raydir.x > 0)
-		game->ray->tex.x = IMG_SIZE - game->ray->tex.x - 1;
+		game->ray->tex.x = game->image_height - game->ray->tex.x - 1;
 	else if (game->ray->side >= 2 && game->ray->raydir.y < 0)
-		game->ray->tex.x = IMG_SIZE - game->ray->tex.x - 1;
-	game->ray->step = 1.0 * IMG_SIZE / line_height;
+		game->ray->tex.x = game->image_height - game->ray->tex.x - 1;
+	game->ray->step = 1.0 * game->image_height / line_height;
 	game->ray->tex_pos = (game->ray->draw_start - HEIGHT / 2 + \
 	line_height / 2) * game->ray->step;
 }

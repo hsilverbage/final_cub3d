@@ -1,4 +1,16 @@
-#include "cub3D.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_init_ray.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/14 20:56:29 by akhellad          #+#    #+#             */
+/*   Updated: 2023/12/14 23:05:55 by akhellad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "cub3Dbonus.h"
 
 static void	ft_set_direction(t_game *game, double dir_x, double dir_y)
 {
@@ -17,22 +29,22 @@ static void	ft_init_direction(t_game *game, char c)
 	if (c == 'N')
 	{
 		ft_set_direction(game, -1, 0);
-		ft_set_plane(game, 0, 0.66);
+		ft_set_plane(game, 0, 0.60);
 	}
 	else if (c == 'S')
 	{
 		ft_set_direction(game, 1, 0);
-		ft_set_plane(game, 0, -0.66);
+		ft_set_plane(game, 0, -0.60);
 	}
 	else if (c == 'E')
 	{
 		ft_set_direction(game, 0, 1);
-		ft_set_plane(game, 0.66, 0);
+		ft_set_plane(game, 0.60, 0);
 	}
 	else if (c == 'W')
 	{
 		ft_set_direction(game, 0, -1);
-		ft_set_plane(game, -0.66, 0);
+		ft_set_plane(game, -0.60, 0);
 	}
 }
 

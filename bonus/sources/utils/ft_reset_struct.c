@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_reset_struct.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 15:48:12 by ahmedkhella       #+#    #+#             */
-/*   Updated: 2023/12/11 15:39:01 by akhellad         ###   ########.fr       */
+/*   Updated: 2023/12/14 23:05:55 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "cub3Dbonus.h"
 
 void	ft_reset_ray(t_ray *ray)
 {
