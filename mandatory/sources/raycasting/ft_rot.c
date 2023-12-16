@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rot.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 15:50:41 by ahmedkhella       #+#    #+#             */
-/*   Updated: 2023/12/14 21:10:29 by akhellad         ###   ########.fr       */
+/*   Updated: 2023/12/16 16:42:27 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,18 @@
 
 void	ft_rot_left(t_game *game)
 {
-	double	olddir_x;
-	double	oldplane_x;
-
-	olddir_x = game->ray->dir.x;
-	game->ray->dir.x = game->ray->dir.x * cos(ROT_SPEED) - \
-		game->ray->dir.y * sin(ROT_SPEED);
-	game->ray->dir.y = olddir_x * sin(ROT_SPEED) + \
-		game->ray->dir.y * cos(ROT_SPEED);
-	oldplane_x = game->ray->plane.x;
-	game->ray->plane.x = game->ray->plane.x * cos(ROT_SPEED) \
-		- game->ray->plane.y * sin(ROT_SPEED);
-	game->ray->plane.y = oldplane_x * sin(ROT_SPEED) \
-		+ game->ray->plane.y * cos(ROT_SPEED);
+	game->ray->angle -= ROT_SPEED;
+	game->ray->dir.x = cos(game->ray->angle);
+	game->ray->dir.y = sin(game->ray->angle);
+	game->ray->plane.x = -game->ray->dir.y * 0.60;
+	game->ray->plane.y = game->ray->dir.x * 0.60;
 }
 
 void	ft_rot_right(t_game *game)
 {
-	double	olddir_x;
-	double	oldplane_x;
-
-	olddir_x = game->ray->dir.x;
-	game->ray->dir.x = game->ray->dir.x * cos(-ROT_SPEED) \
-		- game->ray->dir.y * sin(-ROT_SPEED);
-	game->ray->dir.y = olddir_x * sin(-ROT_SPEED) \
-		+ game->ray->dir.y * cos(-ROT_SPEED);
-	oldplane_x = game->ray->plane.x;
-	game->ray->plane.x = game->ray->plane.x * cos(-ROT_SPEED) \
-		- game->ray->plane.y * sin(-ROT_SPEED);
-	game->ray->plane.y = oldplane_x * sin(-ROT_SPEED) \
-		+ game->ray->plane.y * cos(-ROT_SPEED);
+	game->ray->angle += ROT_SPEED;
+	game->ray->dir.x = cos(game->ray->angle);
+	game->ray->dir.y = sin(game->ray->angle);
+	game->ray->plane.x = -game->ray->dir.y * 0.60;
+	game->ray->plane.y = game->ray->dir.x * 0.60;
 }

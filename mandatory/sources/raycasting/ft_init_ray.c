@@ -3,48 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_ray.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 21:35:01 by akhellad          #+#    #+#             */
-/*   Updated: 2023/12/14 21:35:04 by akhellad         ###   ########.fr       */
+/*   Updated: 2023/12/16 17:10:00 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-static void	ft_set_direction(t_game *game, double dir_x, double dir_y)
+static void	ft_set_angle_and_vectors(t_game *game, double angle)
 {
-	game->ray->dir.x = dir_x;
-	game->ray->dir.y = dir_y;
-}
-
-static void	ft_set_plane(t_game *game, double plane_x, double plane_y)
-{
-	game->ray->plane.x = plane_x;
-	game->ray->plane.y = plane_y;
+	game->ray->angle = angle;
+	game->ray->dir.x = cos(game->ray->angle);
+	game->ray->dir.y = sin(game->ray->angle);
+	game->ray->plane.x = -game->ray->dir.y * 0.60;
+	game->ray->plane.y = game->ray->dir.x * 0.60;
 }
 
 static void	ft_init_direction(t_game *game, char c)
 {
 	if (c == 'N')
 	{
-		ft_set_direction(game, -1, 0);
-		ft_set_plane(game, 0, 0.66);
+		ft_set_angle_and_vectors(game, M_PI / 2);
 	}
 	else if (c == 'S')
 	{
-		ft_set_direction(game, 1, 0);
-		ft_set_plane(game, 0, -0.66);
+		ft_set_angle_and_vectors(game, 3 * M_PI / 2);
 	}
 	else if (c == 'E')
 	{
-		ft_set_direction(game, 0, 1);
-		ft_set_plane(game, 0.66, 0);
+		ft_set_angle_and_vectors(game, 0);
 	}
 	else if (c == 'W')
 	{
-		ft_set_direction(game, 0, -1);
-		ft_set_plane(game, -0.66, 0);
+		ft_set_angle_and_vectors(game, M_PI);
 	}
 }
 

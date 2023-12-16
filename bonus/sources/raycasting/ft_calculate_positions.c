@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calculate_positions.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 20:58:15 by akhellad          #+#    #+#             */
-/*   Updated: 2023/12/14 23:05:55 by akhellad         ###   ########.fr       */
+/*   Updated: 2023/12/16 17:28:42 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ static int	ft_calculate_height(t_game *game)
 {
 	if (game->ray->boolean)
 		game->ray->perp_wall_dist = \
-			(game->ray->side_dist.x - game->ray->delta_dist.x);
+			(game->ray->side_dist.x);
 	else
 		game->ray->perp_wall_dist = \
-			(game->ray->side_dist.y - game->ray->delta_dist.y);
+			(game->ray->side_dist.y);
 	return ((int)(HEIGHT / game->ray->perp_wall_dist));
 }
 

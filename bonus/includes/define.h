@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:06:02 by hsilverb          #+#    #+#             */
-/*   Updated: 2023/12/14 21:21:06 by akhellad         ###   ########.fr       */
+/*   Updated: 2023/12/15 12:19:22 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DEFINE_H
 # define DEFINE_H
 
-# define WIDTH 720
-# define HEIGHT 480
+# define WIDTH 1980
+# define HEIGHT 1080
 # define MOVE_SPEED 0.05
 # define ROT_SPEED 0.03
-# define MINIMAP_WIDTH 200
-# define MINIMAP_HEIGHT 100
+# define MINIMAP_WIDTH 300
+# define MINIMAP_HEIGHT 150
 # define PLAYER_SIZE 5
 
 # define ERR_ARG "Wrong number of arguments : ./cub3d maps/map_name.cub"

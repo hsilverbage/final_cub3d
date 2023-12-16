@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:06:24 by hsilverb          #+#    #+#             */
-/*   Updated: 2023/12/14 21:16:26 by akhellad         ###   ########.fr       */
+/*   Updated: 2023/12/16 18:29:06 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ typedef struct s_ray
 	int			draw_end;
 	int			side;
 	int			boolean;
+	double		angle;
 }	t_ray;
 
 typedef struct s_img

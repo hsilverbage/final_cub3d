@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_textures.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 21:10:57 by akhellad          #+#    #+#             */
-/*   Updated: 2023/12/14 23:45:27 by akhellad         ###   ########.fr       */
+/*   Updated: 2023/12/15 12:17:17 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	set_image_size(t_game *game, int height, int width, int side)
 	{
 		if (game->image_height != height || game->image_width != width)
 		{
-			printf("Error: Texture %d size does not match the size of" \
+			printf("Error: Texture %d size does not match the size of " \
 					"the first texture.\n", side);
 			return (1);
 		}

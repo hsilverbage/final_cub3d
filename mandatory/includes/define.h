@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:06:29 by hsilverb          #+#    #+#             */
-/*   Updated: 2023/12/14 21:21:34 by akhellad         ###   ########.fr       */
+/*   Updated: 2023/12/15 12:16:01 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DEFINE_H
 # define DEFINE_H
 
-# define WIDTH 720
-# define HEIGHT 480
+# define WIDTH 1980
+# define HEIGHT 1080
 # define MOVE_SPEED 0.05
 # define ROT_SPEED 0.03
 

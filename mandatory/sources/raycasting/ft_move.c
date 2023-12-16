@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_move.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 21:10:13 by akhellad          #+#    #+#             */
-/*   Updated: 2023/12/14 21:10:17 by akhellad         ###   ########.fr       */
+/*   Updated: 2023/12/16 15:57:23 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,28 +44,28 @@ static void	ft_move_right(t_game *game)
 {
 	t_point	value;
 
-	value.x = game->map[(int)(game->ray->pos.x + game->ray->dir.y * \
-		MOVE_SPEED)][(int)game->ray->pos.y];
-	value.y = game->map[(int)game->ray->pos.x][(int)(game->ray->pos.y - \
-		game->ray->dir.x * MOVE_SPEED)];
+	value.x = game->map[(int)(game->ray->pos.x - game->ray->dir.y * \
+			MOVE_SPEED)][(int)game->ray->pos.y];
+	value.y = game->map[(int)game->ray->pos.x][(int)(game->ray->pos.y \
+			+ game->ray->dir.x * MOVE_SPEED)];
 	if (value.x != '1')
-		game->ray->pos.x += game->ray->dir.y * MOVE_SPEED;
+		game->ray->pos.x -= game->ray->dir.y * MOVE_SPEED;
 	if (value.y != '1')
-		game->ray->pos.y -= game->ray->dir.x * MOVE_SPEED;
+		game->ray->pos.y += game->ray->dir.x * MOVE_SPEED;
 }
 
 static void	ft_move_left(t_game *game)
 {
 	t_point	value;
 
-	value.x = game->map[(int)(game->ray->pos.x - game->ray->dir.y * \
-		MOVE_SPEED)][(int)game->ray->pos.y];
-	value.y = game->map[(int)game->ray->pos.x][(int)(game->ray->pos.y + \
-		game->ray->dir.x * MOVE_SPEED)];
+	value.x = game->map[(int)(game->ray->pos.x + game->ray->dir.y * \
+			MOVE_SPEED)][(int)game->ray->pos.y];
+	value.y = game->map[(int)game->ray->pos.x][(int)(game->ray->pos.y \
+			- game->ray->dir.x * MOVE_SPEED)];
 	if (value.x != '1')
-		game->ray->pos.x -= game->ray->dir.y * MOVE_SPEED;
+		game->ray->pos.x += game->ray->dir.y * MOVE_SPEED;
 	if (value.y != '1')
-		game->ray->pos.y += game->ray->dir.x * MOVE_SPEED;
+		game->ray->pos.y -= game->ray->dir.x * MOVE_SPEED;
 }
 
 void	ft_move(t_game *game)
