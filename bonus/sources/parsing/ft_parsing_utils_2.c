@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parsing_utils_2.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:15:05 by hsilverb          #+#    #+#             */
-/*   Updated: 2023/12/14 23:05:55 by akhellad         ###   ########.fr       */
+/*   Updated: 2024/01/04 13:10:35 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char	*dup_line(char *src, int len)
 	while (src && src[++j])
 	{
 		i++;
-		if (in_set(src[j], "NWES01"))
+		if (in_set(src[j], ""))
 			dst[i] = src[j];
 	}
 	return (dst);

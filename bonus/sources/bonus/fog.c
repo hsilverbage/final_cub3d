@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fog.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 20:50:26 by akhellad          #+#    #+#             */
-/*   Updated: 2023/12/14 23:05:55 by akhellad         ###   ########.fr       */
+/*   Updated: 2023/12/19 14:12:25 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ int	apply_fog(int original_color, double distance)
 	int		fog_color;
 	double	fog_density;
 
-	fog_color = 0x808B96;
-	fog_density = 0.5;
+	fog_color = 0x000000;
+	fog_density = 0.3;
 	fog_intensity = compute_fog_intensity(distance, fog_density);
 	return (mix_colors(original_color, fog_color, fog_intensity));
 }

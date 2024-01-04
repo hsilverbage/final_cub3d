@@ -1,10 +1,10 @@
-NO ressources/textures/north.xpm
-SO ressources/textures/north.xpm
-WE ressources/textures/plastic.xpm
-EA ressources/textures/plastic.xpm
+NO ressources/textures/east.xpm
+SO ressources/textures/box.xpm
+WE ressources/textures/stone_wall.xpm
+EA ressources/textures/brick_wall.xpm
 
-F 255,0,0
-C 0,0,255
+F 255,78,152
+C 84,102,255
 
 111111
 100001
@@ -12,6 +12,6 @@ C 0,0,255
 101001
 101001
 101001
-10100N
+1010N1
 100001
 111111

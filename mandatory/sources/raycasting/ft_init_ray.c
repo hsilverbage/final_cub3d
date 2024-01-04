@@ -6,7 +6,7 @@
 /*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 21:35:01 by akhellad          #+#    #+#             */
-/*   Updated: 2023/12/16 17:10:00 by akhellad         ###   ########.fr       */
+/*   Updated: 2024/01/04 13:22:20 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 static void	ft_set_angle_and_vectors(t_game *game, double angle)
 {
 	game->ray->angle = angle;
-	game->ray->dir.x = cos(game->ray->angle);
-	game->ray->dir.y = sin(game->ray->angle);
-	game->ray->plane.x = -game->ray->dir.y * 0.60;
-	game->ray->plane.y = game->ray->dir.x * 0.60;
+	game->ray->dir.y = cos(game->ray->angle);
+	game->ray->dir.x = sin(game->ray->angle);
+	game->ray->plane.y = -game->ray->dir.x * 0.8;
+	game->ray->plane.x = game->ray->dir.y * 0.8;
 }
 
 static void	ft_init_direction(t_game *game, char c)
 {
 	if (c == 'N')
 	{
-		ft_set_angle_and_vectors(game, M_PI / 2);
+		ft_set_angle_and_vectors(game, 3 * M_PI_2);
 	}
 	else if (c == 'S')
 	{
-		ft_set_angle_and_vectors(game, 3 * M_PI / 2);
+		ft_set_angle_and_vectors(game, M_PI_2);
 	}
 	else if (c == 'E')
 	{

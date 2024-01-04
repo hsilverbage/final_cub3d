@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_raycasting.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 15:50:46 by ahmedkhella       #+#    #+#             */
-/*   Updated: 2023/12/14 23:05:55 by akhellad         ###   ########.fr       */
+/*   Updated: 2023/12/17 14:41:26 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static void	ft_mlx_hook_loop(t_game *game)
 {
 	mlx_hook(game->mlx->win, 2, 1L << 0, ft_hook_keypress, game);
 	mlx_hook(game->mlx->win, 3, 1L << 1, ft_hook_keyrelease, game);
+	mlx_hook(game->mlx->win, 6, 1L << 6, ft_mouse_rot, game);
 	mlx_hook(game->mlx->win, 17, 0, ft_exit, game);
 	mlx_loop_hook(game->mlx->mlx, ft_loop, game);
 	mlx_loop(game->mlx->mlx);

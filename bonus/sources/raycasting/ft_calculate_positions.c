@@ -6,7 +6,7 @@
 /*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 20:58:15 by akhellad          #+#    #+#             */
-/*   Updated: 2023/12/16 17:28:42 by akhellad         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:13:41 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ static int	ft_calculate_height(t_game *game)
 {
 	if (game->ray->boolean)
 		game->ray->perp_wall_dist = \
-			(game->ray->side_dist.x);
+			(game->ray->side_dist.x - game->ray->delta_dist.x);
 	else
 		game->ray->perp_wall_dist = \
-			(game->ray->side_dist.y);
+			(game->ray->side_dist.y - game->ray->delta_dist.y);
 	return ((int)(HEIGHT / game->ray->perp_wall_dist));
 }
 
@@ -49,7 +49,7 @@ static void	ft_calculate_textures(t_game *game, int line_height)
 		game->ray->tex.x = game->image_height - game->ray->tex.x - 1;
 	else if (game->ray->side >= 2 && game->ray->raydir.y < 0)
 		game->ray->tex.x = game->image_height - game->ray->tex.x - 1;
-	game->ray->step = 1.0 * game->image_height / line_height;
+	game->ray->step = (float)game->image_height / line_height;
 	game->ray->tex_pos = (game->ray->draw_start - HEIGHT / 2 + \
 	line_height / 2) * game->ray->step;
 }

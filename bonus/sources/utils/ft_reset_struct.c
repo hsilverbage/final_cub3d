@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_reset_struct.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 15:48:12 by ahmedkhella       #+#    #+#             */
-/*   Updated: 2023/12/14 23:05:55 by akhellad         ###   ########.fr       */
+/*   Updated: 2023/12/20 15:41:48 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,7 @@ void	ft_init_struct(t_game *game)
 	game->move_left = 0;
 	game->move_right = 0;
 	game->last_x = -1;
+	game->mouse_ignore = 0;
+	game->sprite = "/home/akhellad/Documents/cub3D/ressources/textures/box.xpm";
 	ft_init_mlx(game);
 }

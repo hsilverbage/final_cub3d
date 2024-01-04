@@ -6,7 +6,7 @@
 /*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 20:53:58 by akhellad          #+#    #+#             */
-/*   Updated: 2023/12/16 16:00:10 by akhellad         ###   ########.fr       */
+/*   Updated: 2023/12/19 14:10:06 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	ft_move_down(t_game *game)
 		game->ray->pos.y -= game->ray->dir.y * MOVE_SPEED;
 }
 
-static void	ft_move_right(t_game *game)
+static void	ft_move_left(t_game *game)
 {
 	t_point	value;
 
@@ -54,7 +54,7 @@ static void	ft_move_right(t_game *game)
 		game->ray->pos.y += game->ray->dir.x * MOVE_SPEED;
 }
 
-static void	ft_move_left(t_game *game)
+static void	ft_move_right(t_game *game)
 {
 	t_point	value;
 

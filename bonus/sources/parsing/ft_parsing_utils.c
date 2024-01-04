@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parsing_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:15:07 by hsilverb          #+#    #+#             */
-/*   Updated: 2023/12/14 23:05:55 by akhellad         ###   ########.fr       */
+/*   Updated: 2023/12/19 14:36:28 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 bool	ft_valid_tex_char(char c)
 {
 	if (c == 'N' || c == 'W' || c == 'E' || c == 'S' || c == 'F' || \
-		c == 'C' || c == '\0')
+		c == 'C' || c == 'X' || c == '\0')
 	{
 		return (true);
 	}

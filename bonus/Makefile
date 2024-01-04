@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: akhellad <akhellad@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/14 23:12:00 by akhellad          #+#    #+#              #
-#    Updated: 2023/12/14 23:24:41 by akhellad         ###   ########.fr        #
+#    Updated: 2024/01/04 13:08:01 by akhellad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

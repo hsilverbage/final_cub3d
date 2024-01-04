@@ -6,7 +6,7 @@
 /*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:06:02 by hsilverb          #+#    #+#             */
-/*   Updated: 2023/12/15 12:19:22 by akhellad         ###   ########.fr       */
+/*   Updated: 2023/12/20 15:02:44 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,13 @@
 # define WIDTH 1980
 # define HEIGHT 1080
 # define MOVE_SPEED 0.05
-# define ROT_SPEED 0.03
+# define ROT_SPEED 0.008
+# define MOUSE_SENSITIVITY 0.003
 # define MINIMAP_WIDTH 300
 # define MINIMAP_HEIGHT 150
 # define PLAYER_SIZE 5
+# define HORIZONTAL 1
+# define VERTICAL 2
 
 # define ERR_ARG "Wrong number of arguments : ./cub3d maps/map_name.cub"
 # define ERR_FILE "File not found : ./cub3d maps/map_name.cub"

@@ -6,7 +6,7 @@
 /*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 23:27:18 by akhellad          #+#    #+#             */
-/*   Updated: 2023/12/16 15:58:57 by akhellad         ###   ########.fr       */
+/*   Updated: 2024/01/04 13:17:28 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ typedef struct s_game
 	t_list	*map_list;
 	t_mlx	*mlx;
 	t_ray	*ray;
-	t_img	texture[4];
+	t_img	texture[5];
 	t_img	minimap;
 	char	**file;
 	char	*north;
@@ -97,6 +97,7 @@ typedef struct s_game
 	char	*east;
 	char	*floor;
 	char	*ceiling;
+	char	*sprite;
 	int		floor_color;
 	int		ceiling_color;
 	int		expanded;
@@ -113,6 +114,7 @@ typedef struct s_game
 	char	p;
 	int		image_height;
 	int		image_width;
+	int		mouse_ignore;
 }	t_game;
 
 void			ft_parsing(t_game *game, char *cub_file);
@@ -149,6 +151,7 @@ int				ft_hook_keyrelease(int key, t_game *game);
 int				apply_fog(int original_color, double distance);
 void			draw_player_on_minimap(t_game *game);
 void			draw_minimap(t_game *game);
+int				ft_mouse_rot(int x, int y, t_game *game);
 
 int				ft_error(int error_code);
 int				ft_exit(t_game *game);
